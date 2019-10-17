@@ -20,7 +20,7 @@ vname = "sai"
 with Dataset(fname,"w") as fou:
   fou.createDimension("lat"     , nx )
   fou.createDimension("lon"     , ny )
-  fou.createDimension(periods   , nt)  #hard coded but usually we consider only 4 seasons
+  fou.createDimension(periods   , nt)  #
   time = fou.createVariable(periods    , "i4"  , (periods , ))
   time[:]           = range(1,nt+1)
   time.units        = periods
