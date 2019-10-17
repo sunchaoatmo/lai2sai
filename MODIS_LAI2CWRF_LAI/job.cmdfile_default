@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -A UMCP0008
+#PBS -N cmdfname
+#PBS -j oe
+#PBS -m abe
+#PBS -M sunchao@umd.edu
+#PBS -q regular
+#PBS -l walltime=01:00:00
+### Request one chunk with ncpus and mpiprocs set to
+### the number of lines in the command file
+#PBS -l select=1:ncpus=NCPU:mpiprocs=NCPU
+
+
+export MPI_SHEPHERD=true
+mpiexec_mpt launch_cf.sh cmdfname
