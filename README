@@ -1,0 +1,5 @@
+1. generate a daily LAI data
+2. use cpost.py or any program to generate a monthly LAI data
+3. run the lai2sai.py  
+to compile the code you need first run:
+python setup.py build_ext --inplace
