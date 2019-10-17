@@ -1,0 +1,7 @@
+1. use the  MODIS_LAI2CWRF_LAI//download_dai.py  to download the lai and sai data for your specific purpose region 
+2. use the MODIS2CWRF_MCD12Q1 generate the igbp map, this is for the purpose of landsurface mapping
+3. combine the output into a single file
+4. use cdo ymonmean modis_LAI_daily.nc MODIS_LAI_monmean.nc calculate monthly mean 
+5. use the MODIS_LAI2CWRF_LAI to convert sai to lai 
+6. use the split_lai_sai.ncl to split the nc file into binary file  
+7. then run all check script in CHECK folder lastly, run fixnan to clean up nan point in wrfveg
