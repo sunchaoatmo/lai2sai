@@ -7,21 +7,21 @@ F2PY_FLAGS= -I./ -L./ -lmap
 SRCS = remaproj.f90
 
 F2PY = f2py
-FC   =ifort
+FC   =gfortran
 FFLAGS=-fPIC 
 OBJS = $(SRCS:.f90=.so)
 all:    $(OBJS)
 	@echo  ${MODULE}.so has been compiled
 
 remaproj.so: remaproj.f90 libmap.a 
-	$(F2PY) $(F2PY_FLAGS) --f90flags=-fPIC  --fcompiler=intelem --f90flags="-O3" -m remaproj -c remaproj.f90
+	$(F2PY) $(F2PY_FLAGS) --f90flags=-fPIC  --fcompiler=gnu95 --f90flags="-O3" -m remaproj -c remaproj.f90
 
 
 
 
 
 libmap.a: module_map_utils.f90
-	ifort -fPIC -c module_map_utils.f90 
+	gfortran -fPIC -c module_map_utils.f90 
 	ar crs libmap.a module_map_utils.o
 
 
