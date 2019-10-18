@@ -1,5 +1,5 @@
 *.[ao]
-*.f
+*.so
 *.exe
 *.mod
 configure.*
