@@ -1,4 +1,9 @@
+@zchen43, 10/31/2022
 
+- making new branch for building FVC from MODIS data 
+
+
+===
 module swap intel gcc
 module load python/3.6-anaconda
 conda  create -n modisesmf
